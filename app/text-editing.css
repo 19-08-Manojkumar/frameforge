@@ -1,0 +1,183 @@
+.auto-grow-textarea {
+  box-sizing: border-box;
+  overflow: hidden;
+  resize: none;
+}
+.text-overlay-item.editing {
+  max-width: none;
+  color: inherit;
+  outline: 1.5px solid #80a66d;
+  outline-offset: 4px;
+  cursor: text;
+  touch-action: auto;
+  user-select: text;
+}
+.inline-text-editor {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 1em;
+  min-height: 1.12em;
+  white-space: pre-wrap;
+}
+.inline-text-editor .inline-text-input {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  display: block;
+  width: calc(100% + 2px);
+  min-width: 0;
+  min-height: 1.12em;
+  margin: 0;
+  padding: 0 1px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  caret-color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  white-space: pre-wrap;
+  overflow: hidden;
+  resize: none;
+  touch-action: auto;
+}
+.inline-text-input::selection {
+  background: #75a9cf80;
+}
+.quick-preview.text-editing-active .text-style-toolbar {
+  display: flex !important;
+}
+.template-copy textarea.auto-grow-textarea,
+.trip-fields textarea.auto-grow-textarea {
+  min-height: 76px;
+  max-height: none;
+  padding: 11px 12px;
+  font: 14px/1.55 var(--font-sans);
+  border-radius: 8px;
+  resize: none;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .template-copy textarea.auto-grow-textarea,
+  .trip-fields textarea.auto-grow-textarea {
+    font-size: 16px;
+  }
+}
+
+/* A separate frame lets users drag the box while native text selection works. */
+.text-overlay-item {
+  max-width: none;
+  pointer-events: none;
+}
+.text-overlay-item.backed {
+  padding: 0;
+}
+.text-layer-content {
+  position: absolute;
+  top: 50%;
+  width: max-content;
+  max-width: none;
+  white-space: pre;
+  pointer-events: auto;
+}
+.inline-text-editor {
+  pointer-events: auto;
+}
+.inline-text-input {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.text-box-outline {
+  position: absolute;
+  inset: -4px;
+  border: 1px solid #74a468;
+  border-radius: 3px;
+  pointer-events: none;
+}
+.text-box-move,
+.text-box-resize {
+  position: absolute;
+  pointer-events: auto;
+  touch-action: none;
+  z-index: 3;
+}
+.text-box-move {
+  top: -29px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 4px 7px;
+  background: #fffefa;
+  color: #345d38;
+  border: 1px solid #85a979;
+  border-radius: 5px;
+  font: 10px/1.2 var(--font-sans);
+  cursor: grab;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px #15352b22;
+}
+.text-box-move.inside {
+  top: 2px;
+}
+.text-box-move:active {
+  cursor: grabbing;
+}
+.text-box-resize {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fffefa;
+  border-radius: 3px;
+  background: #54824b;
+  box-shadow: 0 0 0 1px #54824b;
+  transform: translate(-50%, -50%);
+}
+.text-box-resize.left {
+  left: 0;
+  top: 50%;
+  cursor: ew-resize;
+}
+.text-box-resize.right {
+  left: 100%;
+  top: 50%;
+  cursor: ew-resize;
+}
+.text-box-resize.bottom-left {
+  left: 0;
+  top: 100%;
+  cursor: nesw-resize;
+}
+.text-box-resize.bottom-right {
+  left: 100%;
+  top: 100%;
+  cursor: nwse-resize;
+}
+@media (pointer: coarse) {
+  .text-box-resize {
+    width: 21px;
+    height: 21px;
+    background: radial-gradient(
+      #54824b 35%,
+      #fffefa 40%,
+      #fffefa 55%,
+      #54824b 60%,
+      transparent 65%
+    );
+    border: 0;
+    box-shadow: none;
+  }
+  .text-box-move {
+    min-height: 30px;
+    padding: 6px 9px;
+    font-size: 11px;
+    top: -34px;
+  }
+  .text-box-move.inside {
+    top: 2px;
+  }
+}

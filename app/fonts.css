@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Studio Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/outfit.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/playfairdisplay.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/cormorantgaramond.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Libre Baskerville";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/librebaskerville.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Caveat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/caveat.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Dancing Script";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/dancingscript.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pacifico.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Lobster";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/lobster.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/bebasneue.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/anton.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/oswald.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/quicksand.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/spacemono.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Abril Fatface";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/abrilfatface.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Permanent Marker";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/permanentmarker.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Studio Satisfy";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/satisfy.woff2") format("woff2");
+}

@@ -1,0 +1,176 @@
+.session-restart {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #66816b;
+  font-size: 11px;
+  padding: 5px;
+}
+.session-restart:hover {
+  color: #1b5145;
+}
+.session-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #73816e;
+  margin: 10px 0 0;
+}
+.session-notice svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.session-notice strong {
+  font-weight: 600;
+  color: #496344;
+}
+.session-dialog {
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #e0e7da;
+  border-radius: 18px;
+  background: #fffefa;
+  color: #294334;
+  box-shadow: 0 24px 90px #102d3250;
+}
+.session-dialog::backdrop {
+  background: #123c355e;
+  backdrop-filter: blur(5px);
+}
+.session-dialog-close {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #eef2e9;
+  color: #788574;
+}
+.session-dialog-icon {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  margin-bottom: 21px;
+  border-radius: 14px;
+  background: #edf3e6;
+  color: #527543;
+}
+.session-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  color: #798970;
+}
+.session-dialog h2 {
+  font-size: 25px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin: 8px 0 13px;
+}
+.session-dialog > p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #73816c;
+}
+.session-download-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f1f5e9;
+  padding: 13px;
+  margin: 20px 0;
+  border-radius: 9px;
+  color: #6f865d;
+}
+.session-download-hint svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.session-download-hint p {
+  font-size: 11px;
+  line-height: 1.7;
+}
+.session-dialog-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.session-dialog-actions button {
+  min-height: 43px;
+  padding: 10px 12px;
+  font-size: 12px;
+  border-radius: 7px;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+}
+.session-dialog-actions .session-keep {
+  grid-column: 1/-1;
+  background: #1b5145;
+  color: white;
+  font-weight: 600;
+}
+.session-dialog-actions .session-keep:hover {
+  background: #133f35;
+}
+.session-download {
+  background: white;
+  border: 1px solid #dce5d3;
+  color: #4f7045;
+}
+.session-confirm {
+  background: transparent;
+  color: #967058;
+}
+.session-confirm:hover:not(:disabled) {
+  background: #f8eee5;
+}
+.session-dialog > .session-dialog-saved {
+  color: #2e7551;
+  padding-bottom: 14px;
+  font-size: 11px;
+}
+.session-dialog > .session-dialog-error {
+  color: #a14d3b;
+  padding-bottom: 14px;
+  font-size: 11px;
+}
+.session-dialog > .session-dialog-footnote {
+  font-size: 10px;
+  margin-top: 12px;
+}
+@media (max-width: 900px) {
+  .export-settings > .session-notice {
+    grid-column: 1/-1;
+    margin: 0 0 10px;
+  }
+  .session-restart {
+    padding: 5px;
+  }
+  .session-restart span {
+    display: none;
+  }
+  .session-dialog {
+    padding: 25px 22px;
+  }
+  .session-dialog h2 {
+    font-size: 24px;
+  }
+  .session-dialog-actions {
+    grid-template-columns: 1fr;
+  }
+  .session-notice {
+    font-size: 10px;
+  }
+}

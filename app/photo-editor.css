@@ -1,0 +1,248 @@
+.preview-heading {
+  flex-wrap: wrap;
+}
+.preview-tools {
+  flex-wrap: wrap;
+}
+.photo-controls {
+  flex: 0 0 auto;
+  max-height: 140px;
+  overflow: auto;
+  padding: 8px;
+  margin-bottom: 7px;
+  background: #fffefa;
+  border: 1px solid #d7e2ce;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px #2e4f2210;
+  scrollbar-width: thin;
+}
+.photo-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: max-content;
+  margin-bottom: 5px;
+}
+.photo-controls button,
+.photo-controls select,
+.photo-controls label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 29px;
+  border: 1px solid #dce5d4;
+  border-radius: 4px;
+  background: white;
+  color: #395939;
+  font-size: 10px;
+  padding: 4px 6px;
+}
+.photo-controls select {
+  max-width: 160px;
+}
+.photo-controls label {
+  gap: 3px;
+  padding: 3px 5px;
+}
+.photo-controls input {
+  background: transparent;
+  width: 33px;
+  border: 0;
+  font-size: 10px;
+  padding: 0;
+  color: #395939;
+}
+.photo-mode {
+  display: flex;
+  gap: 2px;
+}
+.photo-mode button[aria-pressed="true"] {
+  background: #1b5043;
+  color: white;
+  border-color: #1b5043;
+}
+.photo-controls button:hover:not(:disabled) {
+  border-color: #749268;
+}
+.photo-controls > p {
+  font-size: 9px;
+  color: #78856b;
+  margin: 0;
+}
+.photo-controls-primary > select {
+  flex: 1;
+  min-width: 70px;
+}
+.photo-adjustment-sliders {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin: 5px 0;
+}
+.photo-adjustment-sliders label {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  padding: 3px 6px;
+}
+.photo-adjustment-sliders label > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+}
+.photo-adjustment-sliders output {
+  color: #7b8b78;
+  font-size: 9px;
+}
+.photo-adjustment-sliders input[type="range"] {
+  width: 100%;
+  height: 15px;
+  accent-color: #1b5145;
+  cursor: pointer;
+}
+.photo-align-row > span {
+  color: #7b8b78;
+  font-size: 10px;
+  margin-right: 3px;
+}
+.photo-adjustments .photo-controls-row {
+  min-width: 0;
+}
+.photo-effects summary {
+  cursor: pointer;
+  font-size: 10px;
+  color: #64825a;
+  padding: 3px 0 6px;
+}
+.photo-effects .photo-controls-row {
+  padding: 2px 0;
+}
+.photo-effects input[type="range"] {
+  width: 70px;
+  accent-color: #1b5145;
+}
+.trip-theme-tip {
+  flex-shrink: 0;
+  color: #7c725d;
+  background: #f5f0e6;
+  border-radius: 5px;
+  padding: 7px 8px;
+  font-size: 9px;
+  line-height: 1.6;
+  margin: 0 0 9px;
+}
+.photo-selection {
+  position: absolute;
+  border: 1.5px solid #448f73;
+  box-shadow: 0 0 0 1px #ffffffc0;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: center;
+}
+.photo-resize-handle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  background: transparent;
+  pointer-events: auto;
+  touch-action: none;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+}
+.photo-resize-handle::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: white;
+  border: 1px solid #237354;
+  border-radius: 2px;
+}
+.handle-nw {
+  left: 0;
+  top: 0;
+  cursor: nwse-resize;
+}
+.handle-n {
+  left: 50%;
+  top: 0;
+  cursor: ns-resize;
+}
+.handle-ne {
+  left: 100%;
+  top: 0;
+  cursor: nesw-resize;
+}
+.handle-e {
+  left: 100%;
+  top: 50%;
+  cursor: ew-resize;
+}
+.handle-se {
+  left: 100%;
+  top: 100%;
+  cursor: nwse-resize;
+}
+.handle-s {
+  left: 50%;
+  top: 100%;
+  cursor: ns-resize;
+}
+.handle-sw {
+  left: 0;
+  top: 100%;
+  cursor: nesw-resize;
+}
+.handle-w {
+  left: 0;
+  top: 50%;
+  cursor: ew-resize;
+}
+.select-photo-thumbnail {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border-radius: 5px;
+}
+.select-photo-thumbnail[aria-pressed="true"] {
+  outline: 2px solid #448f73;
+  outline-offset: 3px;
+}
+.canvas-stage canvas {
+  cursor: default;
+  touch-action: none;
+}
+@media (max-width: 900px) {
+  .preview-tools {
+    gap: 4px;
+  }
+  .preview-tools .add-text-tool,
+  .preview-tools .add-photos-tool {
+    min-height: 28px;
+  }
+  .photo-controls {
+    max-height: 150px;
+    padding: 6px;
+  }
+  .photo-controls button,
+  .photo-controls select,
+  .photo-controls label {
+    min-height: 32px;
+  }
+  .photo-controls select {
+    max-width: 130px;
+  }
+  .photo-controls-primary > select {
+    max-width: 94px;
+  }
+  .photo-resize-handle {
+    width: 28px;
+    height: 28px;
+  }
+  .photo-resize-handle::after {
+    inset: 8px;
+  }
+}

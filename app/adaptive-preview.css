@@ -1,0 +1,220 @@
+/* Keep the full canvas visible; place tools in the space its aspect ratio leaves. */
+.preview-section {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-areas: "heading actions" "inspector inspector" "canvas canvas" "footer footer";
+  column-gap: 8px;
+}
+.preview-heading {
+  grid-area: heading;
+  margin: 0 0 4px;
+  align-self: center;
+}
+.preview-tool-dock {
+  display: contents;
+}
+.preview-tools {
+  grid-area: actions;
+  min-width: 0;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+}
+.preview-editing-tools {
+  grid-area: inspector;
+  min-width: 0;
+  min-height: 0;
+}
+/* Nested control groups must wrap too, not just the outer action toolbar. */
+.decoration-tools {
+  flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
+}
+.decoration-tools > button,
+.decoration-tools > select {
+  min-width: 0;
+  max-width: 100%;
+}
+.preview-editing-tools
+  :is(
+    .photo-controls,
+    .sticker-controls,
+    .text-style-toolbar,
+    .blend-inline-controls
+  ) {
+  min-width: 0;
+  max-width: 100%;
+}
+.preview-editing-tools
+  :is(
+    .photo-controls-row,
+    .sticker-controls-row,
+    .photo-mode,
+    .text-layer-controls
+  ) {
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.preview-editing-tools :is(button, select, label) {
+  min-width: 0;
+  max-width: 100%;
+}
+.preview-editing-tools :is(.photo-controls, .sticker-controls) label {
+  flex-wrap: wrap;
+}
+.canvas-workspace {
+  grid-area: canvas;
+  height: auto;
+  align-items: safe center;
+  justify-content: safe center;
+  padding: 4px;
+}
+.preview-footer {
+  grid-area: footer;
+}
+.preview-tool-dock[data-customizing="false"] .background-color-tool,
+.preview-tool-dock[data-customizing="false"] .blend-inline-controls,
+.preview-tool-dock[data-customizing="false"] .crop-toolbar,
+.preview-tool-dock[data-customizing="false"]
+  .preview-tool-button:not(.customize-toggle):not(.focus-toggle):not(
+    .add-text-tool
+  ):not(.add-photos-tool):not(.add-image-tool):not(.layout-reset-tool):not(
+    .decoration-toggle
+  ):not(.quick-customize):not(.expand-preview-tool) {
+  display: none;
+}
+.quick-preview .preview-tools > .expand-preview-tool {
+  display: inline-flex !important;
+}
+.expanded-preview {
+  padding: 10px;
+}
+.preview-section.expanded-preview .canvas-workspace {
+  height: auto;
+}
+
+@media (min-width: 901px) {
+  .preview-section[data-tool-dock="side"] {
+    grid-template-columns: minmax(0, 1fr) var(--tool-dock-width);
+    grid-template-rows: 26px minmax(0, 1fr) 28px;
+    grid-template-areas: "heading dock" "canvas dock" "footer dock";
+    column-gap: 10px;
+  }
+  .preview-section[data-tool-dock="side"] .preview-tool-dock {
+    grid-area: dock;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 0;
+    padding: 6px;
+    border: 1px solid #dfe7d8;
+    border-radius: 8px;
+    background: #fffefa;
+  }
+  .preview-section[data-tool-dock="side"] .preview-tools {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    align-items: stretch;
+    flex-shrink: 0;
+    gap: 5px;
+    position: relative;
+    margin: 0;
+  }
+  .preview-section[data-tool-dock="side"] .preview-tools > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .preview-section[data-tool-dock="side"] .preview-tools > select,
+  .preview-section[data-tool-dock="side"] .focus-toggle,
+  .preview-section[data-tool-dock="side"] .decoration-tools {
+    grid-column: 1/-1;
+  }
+  .preview-section[data-tool-dock="side"] .preview-tool-button {
+    justify-content: center;
+    min-height: 30px;
+  }
+  .preview-section[data-tool-dock="side"] .preview-editing-tools {
+    flex: 1;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  .preview-section[data-tool-dock="side"] .preview-editing-tools > * {
+    max-height: none;
+    overflow: visible;
+    margin: 0 0 7px;
+  }
+  .preview-section[data-tool-dock="side"] .photo-controls-row,
+  .preview-section[data-tool-dock="side"] .sticker-controls-row {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+  .preview-section[data-tool-dock="side"] .photo-adjustment-sliders {
+    grid-template-columns: 1fr;
+  }
+  .preview-section[data-tool-dock="side"] .photo-alignment-buttons {
+    flex-wrap: wrap;
+  }
+  .preview-section[data-tool-dock="side"] .text-style-toolbar {
+    gap: 6px;
+    padding: 7px;
+  }
+  .preview-section[data-tool-dock="side"] .text-edit-hint {
+    width: 100%;
+  }
+  .preview-section[data-tool-dock="side"] .text-layer-controls {
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .preview-section[data-tool-dock="side"] .preview-footer {
+    flex-wrap: wrap;
+    font-size: 8px;
+    gap: 3px;
+  }
+  .preview-section[data-tool-dock="side"] .decoration-tools {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .preview-section[data-tool-dock="side"] .decoration-tools > button,
+  .preview-section[data-tool-dock="side"] .decoration-tools > select {
+    width: 100%;
+    max-width: 100%;
+    min-height: 30px;
+  }
+  .preview-section[data-tool-dock="side"] .decoration-library {
+    top: 0;
+    right: calc(100% + 12px);
+    max-height: min(560px, calc(100dvh - 90px));
+  }
+}
+@media (max-width: 900px) {
+  .preview-section {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    grid-template-areas: "actions" "inspector" "canvas" "footer";
+    column-gap: 0;
+  }
+  .preview-heading {
+    display: none;
+  }
+  .preview-tools {
+    justify-content: flex-end;
+  }
+  .preview-editing-tools {
+    max-height: min(160px, 24dvh);
+    overflow: auto;
+    scrollbar-width: thin;
+    overscroll-behavior: contain;
+  }
+  .preview-editing-tools > * {
+    max-height: none;
+  }
+  .canvas-workspace {
+    padding: 2px;
+  }
+}
