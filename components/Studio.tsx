@@ -1322,12 +1322,17 @@ export default function Studio({
               <Redo2 size={15} />
             </button>
           </div>
-          <span
-            className="local-badge"
-            title="Collage editing and drafts stay on this device. Optional AI sends your chosen reference to Cloudflare."
-          >
-            <span />
-            Local collage editing
+          <span className="creator-badge">
+            Created by{" "}
+            <a
+              className="header-credit"
+              href="https://manojkumar-dev.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit manojkumar's portfolio"
+            >
+              manojkumar
+            </a>
           </span>
           <span className="header-rule" />
           <button

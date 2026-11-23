@@ -16,18 +16,37 @@ export function DraftStatus({
   onRetry: () => void;
   onSave: () => void;
 }) {
+  const tooltip =
+    [
+      "Collage editing and drafts stay in this browser on this device.",
+      "Optional Cloudflare AI sends your chosen reference image to Cloudflare.",
+      error ||
+        (status === "checking"
+          ? "Checking for drafts."
+          : status === "saving"
+            ? "Saving photos and edits."
+            : status === "error"
+              ? "The draft could not be saved. You can retry."
+              : hasWork && status === "unsaved"
+                ? "Changes are waiting to save. Use Save now to keep them on this device."
+                : updatedAt
+                  ? `Last saved ${new Date(updatedAt).toLocaleTimeString()}.`
+                  : ""),
+    ]
+      .filter(Boolean)
+      .join(" ");
   const label =
     status === "checking"
-      ? "Checking for a draft…"
+      ? "Local editing · Checking for drafts…"
       : status === "error"
-        ? "Draft not saved"
+        ? "Local editing · Draft not saved"
         : !hasWork
-          ? "Drafts save on this device"
+          ? "Local editing · Drafts save on this device"
           : status === "saving"
-            ? "Saving draft…"
+            ? "Local editing · Saving draft…"
             : status === "saved"
-              ? "Draft saved on this device"
-              : "Changes waiting to save";
+              ? "Local editing · Draft saved on this device"
+              : "Local editing · Changes waiting to save";
   return (
     <div
       className={`draft-status draft-status-${status}`}
@@ -44,12 +63,9 @@ export function DraftStatus({
         <Save size={13} />
       )}
       <span
-        title={
-          error ||
-          (updatedAt
-            ? `Last saved ${new Date(updatedAt).toLocaleTimeString()}. Browser storage can be cleared by device settings.`
-            : "Photos and edits are saved in this browser only.")
-        }
+        className="draft-status-tooltip"
+        data-tooltip={tooltip}
+        tabIndex={0}
       >
         {label}
       </span>

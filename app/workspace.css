@@ -157,9 +157,6 @@ body {
 .header-right {
   gap: 13px;
 }
-.local-badge {
-  font-size: 10px;
-}
 .help-button {
   font-size: 11px;
 }
@@ -688,7 +685,6 @@ body {
   .export-panel {
     padding: 12px 10px 8px;
   }
-  .header-right .local-badge,
   .header-rule {
     display: none;
   }
@@ -731,7 +727,6 @@ body {
   .help-button {
     padding: 5px;
   }
-  .header-right .local-badge,
   .header-rule,
   .help-button span {
     display: none;
